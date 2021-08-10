@@ -6,24 +6,27 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class User {
+@Table(name = "todo_user")
+public class User{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "username")
+//    @Column(name = "username")
     private String username;
 
-    @Column(name = "email")
+//    @Column(name = "email")
     private String email;
 
-    @Column(name = "password")
+//    @Column(name = "password")
     private String password;
 }

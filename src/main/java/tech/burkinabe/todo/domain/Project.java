@@ -15,6 +15,7 @@ import java.time.ZonedDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table
 public class Project {
 
     @Id
